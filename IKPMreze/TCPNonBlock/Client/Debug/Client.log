@@ -1,0 +1,5 @@
+﻿  Client.cpp
+C:\Users\TUF\Desktop\TCPNonBlock\Client\Client.cpp(91,11): warning C4477: 'scanf_s' : format string '%d' requires an argument of type 'int *', but variadic argument 1 has type 'short *'
+C:\Users\TUF\Desktop\TCPNonBlock\Client\Client.cpp(91,11): message : consider using '%hd' in the format string
+C:\Users\TUF\Desktop\TCPNonBlock\Client\Client.cpp(37,7): warning C4101: 'dataBuffer': unreferenced local variable
+  Client.vcxproj -> C:\Users\TUF\Desktop\TCPNonBlock\Debug\Client.exe

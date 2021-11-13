@@ -1,0 +1,4 @@
+﻿  Server.cpp
+C:\Users\TUF\Desktop\TCPBlock\TCPBlock\Server.cpp(91,10): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'char *'
+C:\Users\TUF\Desktop\TCPBlock\TCPBlock\Server.cpp(29,7): warning C4101: 'dataBuffer2': unreferenced local variable
+  TCPBlock.vcxproj -> C:\Users\TUF\Desktop\TCPBlock\Debug\TCPBlock.exe

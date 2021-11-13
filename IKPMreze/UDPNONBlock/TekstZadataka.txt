@@ -1,0 +1,38 @@
+﻿Zadaci
+Koristeći primer implementacije UDP klijenta i servera koji je dat u prilogu materijala za vežbu,
+potrebno je omogućiti na serveru multipleksiranje operacija čitanja poruka sa mreže i praćenje
+grešaka zasnovano na dogaĎajima.
+1. Na serveru napraviti dva UDP soketa i povezati ih sa adresama i portovima koji su dati u
+nastavku: (0.4 poena)
+ serverSocket1
+o IP adresa: sve dostupne adrese
+o Port: 15011
+ serverSocket2
+o IP adresa: 127.0.0.1
+o Port: 15012
+2. Obezbediti neblokirajući režim izvršavanja operacija nad serverskim soketima. (0.3
+poena)
+3. Kreirati set za operacije čitanja, inicijalizovati ga i dodati odgovarajuće sokete u set. (0.3
+poena)
+4. Omogućiti istovremeno čekanje prispeća paketa na oba serverska soketa korišćenjem
+select funkcije. Nakon izvršenja select funckije proveriti koliko dogaĎaja se desilo i da li
+se desila greška prilikom poziva funkcije. (0.3 poena)
+5. Ukoliko je pristigao paket na neki od soketa, potrebno je proveriti na koji od soketa je
+pristigao paket i pozvati funkciju koja će omogućiti njegov prijem. Ispisati sadržaj
+primljene poruke. (0.3 poena)
+6. Omogućiti klijentu da može poslati više poruka serveru. Ukoliko klijent upiše “end”
+potrebno je ugasiti klijenta. (0.2 poena)
+7. Na klijentskoj strani potrebno je učitati iz komandne linije port servera, kako bismo
+omogućili da se sa različitih klijenata izvršavanjem istog koda mogu slati poruke ka
+različitim portovima na serveru (portovi 15011 i 15012). (0.2 poena)
+Napomena: konverziju stringa u broj moguće je realizovati korišćenjem atoi funkcije čija
+deklaracija je data u nastavku:
+int atoi(char* buffer);
+8. Uz multipleksiranje operacija čitanja poruka, omogućiti na serverskim utičnicama i
+praćenje statusa grešaka zasnovano na dogaĎajima.
+ Kreirati set za praćenje grešaka, inicijalizovati ga i dodati odgovarajuće sokete u
+njega. (0.2 poena)
+ Uz pomoć select funkcije pratiti operacije čitanja poruka i status grešaka na
+utičnicama. (0.1 poena)
+ Nakon izvršenja select funkcije proveriti da li se na nekoj utičnici desila greška.
+Ako jeste, zatvoriti datu utičnicu. (0.2 poena)

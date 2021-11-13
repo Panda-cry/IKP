@@ -1,0 +1,3 @@
+﻿  Client.cpp
+C:\Users\TUF\Desktop\UDPVezbe5Mreze1\Client\Client.cpp(33,27): warning C4002: too many arguments for function-like macro invocation 'MAKEWORD'
+  Client.vcxproj -> C:\Users\TUF\Desktop\UDPVezbe5Mreze1\Debug\Client.exe

@@ -1,0 +1,58 @@
+Vežba 10 – Zadaci iz
+neblokirajućih soketa
+Koristeći primer implementacije TCP klijenta i servera koji je dat u prilogu materijala za vežbu,
+potrebno je omogućiti na serveru multipleksiranje operacija čitanja poruka sa mreže zasnovanim
+na događajima.
+1. (0.2) Obezbediti neblokirajući režim izvršavanja operacija nad serverskim soketom koji
+služi za prijem zahteva za uspostavom veze sa serverom.
+2. (0.2 / 0.4) Kreirati fd_set za operacije čitanja, inicijalizovati ga i dodati soket za
+prijem konekcija u set.
+3. (0.3 / 0.7) Omogućiti čekanje prispeća novih konekcija na soket korišćenjem select
+funkcije. Maksimalni interval čekanja podesiti na 1 sekundu.
+4. (0.3 / 1.0) Nakon izvršenja select funckije proveriti koliko događaja se desilo i da li
+se desila greška prilikom poziva funkcije.
+ Ukoliko se desila greška ugasiti server.
+ Ukoliko se nije desio događaj nastaviti sa čekanjem događaja
+ U suprotnom, ispisati broj događaja koji se dogodio.
+5. (0.3 / 1.3) Proveriti da li događaj koji se desio predstavlja zahtev za uspostavom konekcija.
+Posle toga prihvatiti konekciju i ispisati port i adresu klijenta koji je zahtev poslao.
+6. (0.2 / 1.5) Obezbediti neblokirajući režim izvršavanja operacija nad soketom koji je
+dodeljen klijentu. Nakon toga omogućiti čekanje novih događaja.
+7. (0.2 / 1.7) Umesto jednog soketa, deklarisati niz od 3 soketa i brojač koji će pamtiti koji
+je poslednji soket dodeljen novom klijentu. Prilikom odobravanja zahteva za uspostavom
+veze, soket koji se dodeljuje klijentu se smešta u prvo slobodno mesto u nizu soketa.
+8. (0.3 / 2.0) U fd_set u koji se pre svakog poziva dodavao soket za prijem novih
+konekcija potrebno je dodati i sokete svih klijenata koji su se konektovali na server, kako
+bismo pomoću select funkcije mogli osluškivati poruke koje stignu na njih.
+9. (0.3 / 2.3) Dodati nakon izvršenja select funkcije funkcionalnost koja će omogućiti
+proveru da li je stigla poruka na neki od soketa koji su dodeljeni klijentima. Ukoliko
+jeste, primiti poruku i ispisati je na ekran.
+10. (0.2 / 2.5) Omogućiti na klijentskoj strani da se šalju poruke dokle god klijent ne
+izabere opciju da ne želi više da šalje poruke.
+11. (0.5 / 3.0)Omogućiti da klijent u okviru jedne poruke pošalje :
+• ime i prezime studenta, i
+• broj poena osvojenih na testu.
+Za ovu namenu kreirati odgovarajuću strukturu (koja će se popuniti potrebnim
+podacima) i poslati je u okviru poruke.
+Primenjeno softversko inženjerstvo
+PRMuIS 1 Vežba 10 – Zadaci iz neblokirajućih soketa
+1
+12. (0.4 / 3.4)Kada poruka stigne na server, ispisati je na ekranu u formatu datom u primeru:
+Ime i prezime : Dragan Jovanović
+Poeni: 40
+13. (0.3 / 3.7) Omogućiti prijem zahteva za prekid veze od klijenata i u tom slučaju
+potrebno je poravnati sokete u nizu tako da se stvori jedno mesto na kraju i umanjiti
+brojač zauzetih soketa. Poravnanje soketa u nizu je potrebno uraditi i u slučaju da se
+desila greška prilikom prijema poruke.
+14. (0.2 / 3.9) Omogućiti da se na ekran server ispiše ime predmeta i studijska godina ukoliko
+se u toku čekanja događaja pritisne bilo koja tipka tastature. Iskoristiti: povratnu vrednost
+select funkcije, koja ukazuje na to da je vreme čekanja isteklo i funkciju _kbhit()
+koja vraća true ako je neki od taster bio pritisnut.
+15. (0.4 / 4.3) Prilikom prekida rada servera potrebno je poslati poruku prekida uspostave veze
+čime bi se svi konektovani klijenti obavestili o završetku rada servera i zatim i klijenti
+završili svoj rad.
+16. (0.2 / 4.5) Obezbediti da se ne primi novi zahtev za uspostavom konekcija, ukoliko su već
+uspostavljene 3 konekcije sa klijentima. U tom slučaju u setu u kome se nalaze soketi na
+kojima želimo slušati prijemne događaje ne bi trebalo da se nalazi soket za prijem novih
+konekcija.
+17. I za kraj jedno objašnjenje za one radoznale
