@@ -1,0 +1,3 @@
+﻿  Server.cpp
+C:\Users\TUF\Desktop\WinSock_UDP_Blocking\WinSockServer\Server.cpp(91,48): warning C4996: 'inet_ntoa': Use inet_ntop() or InetNtop() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+  WinSockServer.vcxproj -> C:\Users\TUF\Desktop\WinSock_UDP_Blocking\Debug\WinSockServer.exe

@@ -1,0 +1,4 @@
+﻿  Server.cpp
+C:\Users\TUF\Desktop\WinSock_TCP_Blocking\WinSockServer\Server.cpp(158,65): warning C4996: 'inet_ntoa': Use inet_ntop() or InetNtop() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+C:\Users\TUF\Desktop\WinSock_TCP_Blocking\WinSockServer\Server.cpp(19,10): warning C4101: 'recvbuf': unreferenced local variable
+  WinSockServer.vcxproj -> C:\Users\TUF\Desktop\WinSock_TCP_Blocking\Debug\WinSockServer.exe
